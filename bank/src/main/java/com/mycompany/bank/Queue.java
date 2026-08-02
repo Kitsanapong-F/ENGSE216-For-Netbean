@@ -4,9 +4,10 @@ public class Queue {
 
     private int arr[];
     private int front, rear, count;
+    private int countQueue = 1;
 
     public Queue() {
-        this(2);
+        this(0);
     }
 
     public Queue(int size) {
@@ -22,10 +23,12 @@ public class Queue {
                 this.front = 0;
                 this.rear = 0;
                 arr[rear] = item;
+                countQueue++;
                 count++;
-            } else {//after inti
+            } else {
                 rear = (rear + 1) % arr.length;
                 arr[rear] = item;
+                countQueue++;
                 count++;
             }
         } else {
@@ -62,29 +65,7 @@ public class Queue {
         return this.arr.length;
     }
 
-    public int peek() {
-        if (!isEmpty()) {
-            return arr[front];
-        } else {
-            System.out.println(" empty");
-            return -1;
-        }
-    }
-
-    public void showAll() {
-        System.out.println("Front: " + this.front);
-        System.out.println("Rear: " + this.rear);
-        System.out.println("Count: " + this.count);
-    }
-
-    public void showArr() {
-        System.out.print("arr[" + size() + "] =");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(" " + arr[i]);
-        }
-        System.out.println("");
-    }
-
+   
     public void showActive() {
         System.out.print("active(" + count + ") =");
         for (int i = 0; i < count; i++) {
@@ -92,4 +73,9 @@ public class Queue {
         }
         System.out.println();
     }
+
+    public int getCountqueue() {
+        return countQueue;
+    }
+
 }
