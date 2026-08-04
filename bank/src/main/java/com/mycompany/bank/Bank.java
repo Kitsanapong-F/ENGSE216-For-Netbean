@@ -2,9 +2,9 @@ package com.mycompany.bank;
 
 public class Bank {
 
-    private Queue Dw = new Queue(20);
-    private Queue aO = new Queue(20);
-    private Queue cL = new Queue(20);
+    private Queue Dw = new Queue(17);
+    private Queue aO = new Queue(19);
+    private Queue cL = new Queue(19);
 
     private String counter1 = "-";
     private String counter2 = "-";
@@ -13,7 +13,7 @@ public class Bank {
     private String counter5 = "-";
 
     public void depositsAndwithdrawalsEnqueue() {
-        if (Dw.getCountqueue() > 20) {
+        if (Dw.isFull()) {
             System.out.println("Queue is full!");
         } else {
             int currentQueueNumber = Dw.getCountqueue();
@@ -74,7 +74,7 @@ public class Bank {
     }
 
     public void accountOpeningEnqueue() {
-        if (aO.getCountqueue() > 20) {
+        if (aO.isFull()) {
             System.out.println("Queue is full!");
         } else {
             int currentQueueNumber = aO.getCountqueue();
@@ -104,7 +104,7 @@ public class Bank {
     }
 
     public void loansAndcreditEnqueue() {
-        if (cL.getCountqueue() > 20) {
+        if (cL.isFull()) {
             System.out.println("Queue is full!");
         } else {
             int currentQueueNumber = cL.getCountqueue();
