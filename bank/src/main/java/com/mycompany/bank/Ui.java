@@ -261,9 +261,10 @@ public class Ui extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        b.depositsAndwithdrawalsEnqueue();
         System.out.println("Deposit and withdrawal queue button clicked!");
         
+        b.depositsAndwithdrawalsEnqueue();
+       
         jLabel2.setText(b.getCounter1Ticket());
         jLabel3.setText(b.getCounter2Ticket());
         jLabel4.setText(b.getCounter3Ticket());
@@ -285,8 +286,10 @@ public class Ui extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        b.accountOpeningEnqueue();
         System.out.println("Account Opening queue button clicked!");
+        
+        b.accountOpeningEnqueue();
+        
         jLabel5.setText(b.getCounter4Ticket());
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -296,14 +299,17 @@ public class Ui extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        b.loansAndcreditEnqueue();
         System.out.println("Loans & Credit queue button clicked!");
-        jLabel6.setText(b.getCounter5Ticket());
+           
+        b.loansAndcreditEnqueue();
+        
+        String currentTicket = b.getCounter5Ticket();
+        jLabel6.setText(currentTicket);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
        String ticket = b.loansAndcreditDequeue();
-       jLabel6.setText(b.getCounter5Ticket());
+       jLabel6.setText(ticket);
     }//GEN-LAST:event_jButton8ActionPerformed
 
 

@@ -58,7 +58,7 @@ public class Queue {
     }
 
     boolean isFull() {
-        return count == arr.length;
+        return count == size();
     }
 
     int size() {
@@ -77,5 +77,4 @@ public class Queue {
     public int getCountqueue() {
         return countQueue;
     }
-
 }
