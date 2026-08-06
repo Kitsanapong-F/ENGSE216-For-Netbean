@@ -15,34 +15,36 @@ public class Bank {
     private void checkAndAssignCounters() {
         if (counter1.equals("-") && !Dw.isEmpty()) {
             counter1 = "WD" + Dw.dequeue();
-             System.out.println("Auto Dequeue Deposits And Withdrawals: " + counter1);
+            
+            System.out.println("Auto Dequeue Deposits And Withdrawals: " + counter1);
+            System.out.println("--------------------------------------------");
     
         }
         if (counter2.equals("-") && !Dw.isEmpty()) {
             counter2 = "WD" + Dw.dequeue();
             
-            System.out.println("--------------------------------------------");
             System.out.println("Auto Dequeue Deposits And Withdrawals: " + counter2);
+            System.out.println("--------------------------------------------");
         }
         if (counter3.equals("-") && !Dw.isEmpty()) {
             counter3 = "WD" + Dw.dequeue();
             
-            System.out.println("--------------------------------------------");
             System.out.println("Auto Dequeue Deposits And Withdrawals: " + counter3);
+            System.out.println("--------------------------------------------");
           
         }
         if (counter4.equals("-") && !aO.isEmpty()) {
             counter4 = "AO" + aO.dequeue();
             
-            System.out.println("--------------------------------------------");
             System.out.println("Auto Dequeue Account Opening: " + counter4);
+            System.out.println("--------------------------------------------");
            
         }
         if (counter5.equals("-") && !cL.isEmpty()) {
             counter5 = "CL" + cL.dequeue();
             
-            System.out.println("--------------------------------------------");
             System.out.println("Auto Dequeue Loans And Credit: " + counter5);
+            System.out.println("--------------------------------------------");
         }
     }
 
@@ -54,7 +56,6 @@ public class Bank {
             int currentQueueNumber = Dw.getCountqueue();
 
             Dw.enqueue(currentQueueNumber);
-            System.out.println("--------------------------------------------");
             System.out.println("Adding to queue: " + currentQueueNumber);
 
             checkAndAssignCounters();
@@ -102,9 +103,8 @@ public class Bank {
             int currentQueueNumber = aO.getCountqueue();
 
             aO.enqueue(currentQueueNumber);
-            System.out.println("--------------------------------------------");
             System.out.println("Adding to queue: " + currentQueueNumber);
-
+            System.out.println("--------------------------------------------");
             checkAndAssignCounters();
         }
     }
@@ -129,15 +129,15 @@ public class Bank {
 
     public void loansAndcreditEnqueue() {
         if (cL.isFull()) {
-             System.out.println("--------------------------------------------");
+            System.out.println("--------------------------------------------");
             System.out.println("Queue is full!");
         } else {
             int currentQueueNumber = cL.getCountqueue();
 
             cL.enqueue(currentQueueNumber);
-            System.out.println("--------------------------------------------");
+         
             System.out.println("Adding to queue: " + currentQueueNumber);
-            System.out.println("");
+            System.out.println("--------------------------------------------");
             checkAndAssignCounters();
         }
     }

@@ -261,6 +261,7 @@ public class Ui extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        System.out.println("--------------------------------------------");
         System.out.println("Deposit and withdrawal queue button clicked!");
         
         b.depositsAndwithdrawalsEnqueue();
@@ -286,6 +287,7 @@ public class Ui extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        System.out.println("--------------------------------------------");
         System.out.println("Account Opening queue button clicked!");
         
         b.accountOpeningEnqueue();
@@ -299,6 +301,7 @@ public class Ui extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        System.out.println("--------------------------------------------");
         System.out.println("Loans & Credit queue button clicked!");
            
         b.loansAndcreditEnqueue();
