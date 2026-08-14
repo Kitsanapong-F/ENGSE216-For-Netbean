@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.postfix;
 
-/**
- *
- * @author User
- */
 public class PostFix {
-
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+    
+    Stack  St = new Stack(5);
+    
+    
 }
