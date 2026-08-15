@@ -6,7 +6,7 @@ public class Stack {
     private int arr[];
    
     public Stack() {
-        this(0);
+        this(10);
     }
 
     public Stack(int size) {
@@ -23,7 +23,7 @@ public class Stack {
     
     public int pop(){
         if(isEmpty()){
-            temp = 1;
+            temp = -1;
         }
         else{
             temp = arr[t];
@@ -34,7 +34,7 @@ public class Stack {
     
     public int top(){
         if(isEmpty()){
-            temp = 1;
+            temp = -1;
         }
         else{
             temp = arr[t];
