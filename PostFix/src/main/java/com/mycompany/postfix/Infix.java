@@ -2,7 +2,6 @@ package com.mycompany.postfix;
 
 public class Infix {
 
-    private Stack St = new Stack(5);
     private String output = "";
 
     private boolean isOperator(String s) {
