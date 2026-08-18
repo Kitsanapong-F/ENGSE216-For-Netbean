@@ -64,27 +64,26 @@ public class Infix {
         }
         return output;
     }
-    
+
     public String getFormattedOutput() {
         StringBuilder result = new StringBuilder();
         StringBuilder currentNumber = new StringBuilder();
 
         for (int i = 0; i < output.length(); i++) {
             char c = output.charAt(i);
-            
+
             if (Character.isDigit(c)) {
                 currentNumber.append(c);
             } else {
-                
+
                 if (currentNumber.length() > 0) {
                     result.append(addCommas(currentNumber.toString()));
-                    currentNumber.setLength(0); 
+                    currentNumber.setLength(0);
                 }
-                result.append(c); 
+                result.append(c);
             }
         }
 
-        
         if (currentNumber.length() > 0) {
             result.append(addCommas(currentNumber.toString()));
         }
@@ -92,12 +91,10 @@ public class Infix {
         return result.toString();
     }
 
-   
     private String addCommas(String numStr) {
         StringBuilder formatted = new StringBuilder();
         int count = 0;
-        
-       
+
         for (int i = numStr.length() - 1; i >= 0; i--) {
             if (count == 3) {
                 formatted.insert(0, ",");
@@ -108,9 +105,8 @@ public class Infix {
         }
         return formatted.toString();
     }
-    
-    
-    public String getRawOutput() {
+
+    public String getOutput() {
         return output;
     }
 }
