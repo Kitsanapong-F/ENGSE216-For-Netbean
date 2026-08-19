@@ -52,6 +52,19 @@ public class Infix {
             if (value.equals(")") && !closeparenThesis()) {
                 return output;
             }
+            if (value.matches("[0-9]")) {
+                if (output.equals("0")) {
+                    output = value;
+                    return output;
+                }
+                if (output.length() >= 2) {
+                    String prev = String.valueOf(output.charAt(output.length() - 2));
+                    if (last.equals("0") && (isOperator(prev) || prev.equals("("))) {
+                        output = output.substring(0, output.length() - 1) + value;
+                        return output;
+                    }
+                }
+            }
         }
         output = output + value;
         return output;
