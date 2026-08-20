@@ -101,9 +101,10 @@ public class PostFix {
                 log.addRow(" Pop " + leftover, postfix.toString(), visualStack.toString());
             }
         }
-
+        
         log.finishLog();
 
         return postfix.toString().trim();
     }
+    
 }

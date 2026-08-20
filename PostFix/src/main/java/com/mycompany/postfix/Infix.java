@@ -29,7 +29,7 @@ public class Infix {
             return output;
         }
         if (output.isEmpty()) {
-            if (isOperator(value) || value.equals(")")) {
+            if ((isOperator(value) && !value.equals("-")) || value.equals(")")) {
                 return output;
             }
         } else {
@@ -44,7 +44,7 @@ public class Infix {
             if (value.equals(")") && isOperator(last)) {
                 return output;
             }
-            if (last.equals("(") && isOperator(value)) {
+            if (last.equals("(") && isOperator(value) && !value.equals("-")) {
                 return output;
             }
             if (last.equals(")") && (value.equals("(") || value.matches("[0-9]"))) {
@@ -124,5 +124,28 @@ public class Infix {
 
     public String getOutput() {
         return output;
+    }
+    
+    public void Clear(){
+        output = "";
+    }
+    public boolean readyToconvert() {
+        if (output.isEmpty()) {
+            return false;
+        }
+        String last = String.valueOf(output.charAt(output.length() - 1));
+        
+        if (isOperator(last) || last.equals("(")) {
+            return false;
+        }
+        
+        int openCount = 0;
+        int closeCount = 0;
+        for (int i = 0; i < output.length(); i++) {
+            if (output.charAt(i) == '(') openCount++;
+            if (output.charAt(i) == ')') closeCount++;
+        }
+        
+        return openCount == closeCount;
     }
 }
