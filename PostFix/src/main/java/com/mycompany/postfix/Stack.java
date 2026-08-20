@@ -1,55 +1,53 @@
 package com.mycompany.postfix;
-import java.util.Arrays;
-public class Stack {
 
-    private int t = -1 , temp = 0;
-    private int arr[];
-   
+public class Stack {
+    private Node topNode; 
+    private int size;     
+
     public Stack() {
-        this(10);
+        this.topNode = null;
+        this.size = 0;
     }
 
     public Stack(int size) {
-        this.arr = new int[size];
+        this.topNode = null;
+        this.size = 0;
     }
-    
-    public void push (int item){
-        if(isFull()){
-            arr = Arrays.copyOf(arr, arr.length * 2);
+
+    public void push(int item) {
+        Node newNode = new Node(item);
+        newNode.next = topNode;
+        topNode = newNode;      
+        size++;
+    }
+
+    public int pop() {
+        if (isEmpty()) {
+            return -1;
         }
-        arr[t+1] = item;
-        t++;
+        int poppedData = topNode.data;
+        topNode = topNode.next; 
+        size--;
+        return poppedData;
     }
-    
-    public int pop(){
-        if(isEmpty()){
-            temp = -1;
+
+    public int top() {
+        if (isEmpty()) {
+            return -1;
         }
-        else{
-            temp = arr[t];
-            t--;
-        }
-        return temp;
+        return topNode.data;
     }
-    
-    public int top(){
-        if(isEmpty()){
-            temp = -1;
-        }
-        else{
-            temp = arr[t];
-        }
-        return temp;
+
+    public boolean isEmpty() {
+        return topNode == null;
     }
-    public boolean isFull(){
-        return  size() == arr.length;
+
+    public boolean isFull() {
+     
+        return false;
     }
-    
-    public boolean isEmpty(){
-        return t < 0;
-    }
-    
-    public int size(){
-        return t+1;
+
+    public int size() {
+        return size;
     }
 }
