@@ -34,6 +34,7 @@ public class Infix {
             }
         } else {
             String last = String.valueOf(output.charAt(output.length() - 1));
+
             if (isOperator(value) && isOperator(last)) {
                 return output;
             }
@@ -41,6 +42,9 @@ public class Infix {
                 return output;
             }
             if (value.equals(")") && isOperator(last)) {
+                return output;
+            }
+            if (last.equals("(") && isOperator(value)) {
                 return output;
             }
             if (last.equals(")") && (value.equals("(") || value.matches("[0-9]"))) {
